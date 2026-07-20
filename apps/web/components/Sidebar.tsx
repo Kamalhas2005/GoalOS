@@ -19,15 +19,20 @@ const items: SidebarItem[] = [
   href: "/missions",
   },
   {
-    icon: "📅",
-    label: "Planner",
-    href: "/planner",
+  icon: "📅",
+  label: "Planner",
+  href: "/planner",
   },
   {
-    icon: "📚",
-    label: "Tutor",
-    href: "/tutor",
+  icon: "🌱",
+  label: "Lifestyle",
+  href: "/lifestyle",
   },
+  {
+  icon: "📚",
+  label: "Tutor",
+  href: "/tutor",
+ },
   {
     icon: "🧠",
     label: "Memory",

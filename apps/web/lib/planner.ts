@@ -1,4 +1,5 @@
 import { PlannerTask } from "@/types/planner";
+import { getAvailableSlots } from "@/lib/lifestyle";
 
 export const todayPlan: PlannerTask[] = [
   {
@@ -34,4 +35,13 @@ export function getCompletionPercentage(tasks: PlannerTask[]): number {
   return Math.round(
     (getCompletedTasks(tasks) / tasks.length) * 100
   );
+}
+export function getRecommendedSlot() {
+  const availableSlots = getAvailableSlots();
+
+  if (availableSlots.length === 0) {
+    return null;
+  }
+
+  return availableSlots[0];
 }

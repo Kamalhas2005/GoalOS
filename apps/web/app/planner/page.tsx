@@ -4,6 +4,7 @@ import {
   getCompletedTasks,
   getPendingTasks,
   getCompletionPercentage,
+  getRecommendedSlot,
 } from "@/lib/planner";
 
 export default function PlannerPage() {
@@ -11,6 +12,7 @@ export default function PlannerPage() {
   const pendingTasks = getPendingTasks(todayPlan);
   const completionPercentage =
     getCompletionPercentage(todayPlan);
+  const recommendedSlot = getRecommendedSlot();  
 
   return (
     <main className="min-h-screen bg-[#09090B] p-10 text-white">
@@ -87,6 +89,38 @@ export default function PlannerPage() {
           </div>
 
         </Card>
+       
+       <Card title="🧠 AI Recommendation">
+
+  {recommendedSlot ? (
+
+    <div className="space-y-3">
+
+      <p className="text-slate-400">
+        Best available slot for today's mission
+      </p>
+
+      <p className="text-3xl font-bold text-cyan-300">
+        {recommendedSlot.startTime}
+      </p>
+
+      <p className="text-slate-500">
+        until {recommendedSlot.endTime}
+      </p>
+
+      <p className="text-sm text-emerald-400">
+        {recommendedSlot.durationMinutes} minutes available
+      </p>
+
+    </div>
+
+  ) : (
+
+    <p>No available time today.</p>
+
+  )}
+
+</Card>
 
       </div>
 
