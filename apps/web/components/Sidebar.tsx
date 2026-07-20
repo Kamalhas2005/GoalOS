@@ -1,20 +1,55 @@
+"use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 type SidebarItem = {
   icon: string;
   label: string;
-  active?: boolean;
+  href: string;
 };
 
 const items: SidebarItem[] = [
-  { icon: "🏠", label: "Mission Control", active: true },
-  { icon: "🎯", label: "Missions" },
-  { icon: "📅", label: "Planner" },
-  { icon: "📚", label: "Tutor" },
-  { icon: "🧠", label: "Memory" },
-  { icon: "📈", label: "Analytics" },
-  { icon: "⚙️", label: "Settings" },
+  {
+    icon: "🏠",
+    label: "Mission Control",
+    href: "/",
+  },
+  {
+  icon: "🎯",
+  label: "Missions",
+  href: "/missions",
+  },
+  {
+    icon: "📅",
+    label: "Planner",
+    href: "/planner",
+  },
+  {
+    icon: "📚",
+    label: "Tutor",
+    href: "/tutor",
+  },
+  {
+    icon: "🧠",
+    label: "Memory",
+    href: "/memory",
+  },
+  {
+    icon: "📈",
+    label: "Analytics",
+    href: "/analytics",
+  },
+  {
+    icon: "⚙️",
+    label: "Settings",
+    href: "/settings",
+  },
 ];
 
 export default function Sidebar() {
+  const pathname = usePathname();
+
+   
+
   return (
 <aside className="sticky top-0 flex h-screen w-72 flex-col border-r border-slate-800/60 bg-[#09090B]">
       {/* Logo */}
@@ -48,21 +83,20 @@ export default function Sidebar() {
 <nav className="flex-1 overflow-y-auto px-4 py-6">
         {items.map((item) => (
 
-          <button
-            key={item.label}
-            className={`mb-2 flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left transition-all duration-200
-            ${
-              item.active
-                ? "bg-cyan-500/10 text-cyan-300 border border-cyan-500/20"
-                : "text-slate-400 hover:bg-slate-900 hover:text-white hover:translate-x-1"
-            }`}
-          >
+      <Link
+               key={item.label}
+               href={item.href}
+               className={`mb-2 flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left transition-all duration-200 ${
+                 pathname.startsWith(item.href) &&
+                 (item.href !== "/" || pathname === "/")
+                   ? "border border-cyan-500/20 bg-cyan-500/10 text-cyan-300"
+                   : "text-slate-400 hover:translate-x-1 hover:bg-slate-900 hover:text-white"
+           }`}
+       >
+         <span className="text-lg">{item.icon}</span>
 
-            <span className="text-lg">{item.icon}</span>
-
-            <span className="font-medium">{item.label}</span>
-
-          </button>
+         <span className="font-medium">{item.label}</span>
+      </Link>
 
         ))}
 

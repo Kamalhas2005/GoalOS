@@ -33,10 +33,8 @@ export default function Home() {
   const completionPercentage = getCompletionPercentage(todayPlan);
 
   return (
-    <main className="flex min-h-screen bg-[#09090B]">
-      <Sidebar />
-
-      <div className="flex flex-1 flex-col">
+    <main className="flex-1">
+        <div className="flex flex-col">
         <Header />
 
         <section className="mx-8 mt-8 rounded-3xl border border-cyan-500/20 bg-gradient-to-r from-cyan-500/10 to-slate-900 p-8">
