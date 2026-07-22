@@ -7,6 +7,7 @@ import {
   getWakeUpTime,
   getSleepTime,
   getAvailableSlots,
+  getLifestyleHealth,
 } from "@/lib/lifestyle";
 
 export default function LifestylePage() {
@@ -15,6 +16,7 @@ export default function LifestylePage() {
   const sleepTime = getSleepTime();
 
   const availableSlots = getAvailableSlots();
+  const lifestyleHealth = getLifestyleHealth();
   return (
     <main className="p-10">
 
@@ -23,7 +25,7 @@ export default function LifestylePage() {
         description="Manage your daily routine and availability."
       />
 
-      <div className="grid gap-6 lg:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
 
         <Card title="🌅 Wake Up">
           <p className="text-3xl font-bold text-cyan-300">
@@ -88,7 +90,22 @@ export default function LifestylePage() {
           </div>
 
         </Card>
+        
+        <Card title="🌱 Lifestyle Health">
 
+         <p
+           className={`text-3xl font-bold ${
+            lifestyleHealth === "Excellent"
+             ? "text-emerald-400"
+             : lifestyleHealth === "Good"
+             ? "text-yellow-300"
+             : "text-red-400"
+          }`}
+        >
+         {lifestyleHealth}
+      </p>
+
+   </Card>
 </div>
 
 <div className="mt-8">

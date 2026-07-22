@@ -1,3 +1,4 @@
+import { getStudyMemories } from "@/lib/memory";
 import { PlannerTask } from "@/types/planner";
 import { getAvailableSlots } from "@/lib/lifestyle";
 
@@ -44,4 +45,25 @@ export function getRecommendedSlot() {
   }
 
   return availableSlots[0];
+}
+
+export function getPlanningQuality():
+  | "Excellent"
+  | "Good"
+  | "Needs Attention" {
+
+  const completedTasks = getCompletedTasks(todayPlan);
+  const studyCount = getStudyMemories().length;
+
+  const score = completedTasks + studyCount;
+
+  if (score >= 6) {
+    return "Excellent";
+  }
+
+  if (score >= 3) {
+    return "Good";
+  }
+
+  return "Needs Attention";
 }

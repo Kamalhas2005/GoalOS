@@ -4,6 +4,7 @@ import {
   getCompletedTasks,
   getPendingTasks,
   getCompletionPercentage,
+  getPlanningQuality,
   getRecommendedSlot,
 } from "@/lib/planner";
 
@@ -12,6 +13,7 @@ export default function PlannerPage() {
   const pendingTasks = getPendingTasks(todayPlan);
   const completionPercentage =
     getCompletionPercentage(todayPlan);
+  const planningQuality = getPlanningQuality();
   const recommendedSlot = getRecommendedSlot();  
 
   return (
@@ -85,8 +87,22 @@ export default function PlannerPage() {
               <span>Completion</span>
               <span>{completionPercentage}%</span>
             </div>
+           <div className="flex justify-between font-semibold">
+            <span>Planning Quality</span>
 
-          </div>
+            <span
+             className={`${
+               planningQuality === "Excellent"
+                ? "text-emerald-400"
+                : planningQuality === "Good"
+                ? "text-yellow-300"
+                : "text-red-400"
+             }`}
+           >
+             {planningQuality}
+        </span>
+            </div>
+       </div>
 
         </Card>
        

@@ -1,3 +1,4 @@
+import { getStudyMemories } from "@/lib/memory";
 import {
   LifestyleProfile,
   AvailableSlot,
@@ -112,4 +113,22 @@ export function getAvailableSlots(): AvailableSlot[] {
   }
 
   return slots;
+}
+
+export function getLifestyleHealth():
+  | "Excellent"
+  | "Good"
+  | "Needs Attention" {
+
+  const studyCount = getStudyMemories().length;
+
+  if (studyCount >= 4) {
+    return "Excellent";
+  }
+
+  if (studyCount >= 2) {
+    return "Good";
+  }
+
+  return "Needs Attention";
 }

@@ -4,106 +4,94 @@
 
 GoalOS is an AI Operating System for Human Goals.
 
-Every engine has one clear responsibility.
+It consists of modular engines coordinated by the GoalOS Kernel and extended through multiple integrations.
 
 ---
 
-# Foundation Engines
+# Phase 1 — Foundation Engines
 
-These are the four pillars of GoalOS.
+These engines are the core intelligence of GoalOS.
 
-| Engine       | Responsibility               | Status |
-| ------------ | ---------------------------- | ------ |
-| 🎯 Mission   | What is important?           | V2 ✅  |
-| 📅 Planner   | What should happen next?     | V2 ✅  |
-| 🌱 Lifestyle | When is the user available?  | V2 ✅  |
-| 🧠 Memory    | What should GoalOS remember? | V1 ✅  |
-
----
-
-# Supporting Engines
-
-| Engine           | Depends On                             | Status  |
-| ---------------- | -------------------------------------- | ------- |
-| 📚 Tutor         | Memory + Planner                       | Planned |
-| 📈 Analytics     | Mission + Planner + Lifestyle + Memory | Planned |
-| 🔔 Notifications | Planner + Lifestyle                    | Planned |
-| ⚙️ Settings      | User Configuration                     | Planned |
+| Engine       | Status |
+| ------------ | ------ |
+| 🎯 Mission   | V3 ✅  |
+| 📅 Planner   | V3 ✅  |
+| 🌱 Lifestyle | V3 ✅  |
+| 🧠 Memory    | V2 ✅  |
 
 ---
 
 Mission Engine
 
-✅ V1 — Mission Model
+✅ V1
+✅ V2
+✅ V3
+⬜ V4
+⬜ V5
 
-✅ V2 — Mission Intelligence
+Planner Engine
 
-✅ V3 — Memory Integration
+✅ V1
+✅ V2
+✅ V3
+⬜ V4
+⬜ V5
 
-⬜ V4 — Dynamic Priorities
+Lifestyle Engine
 
-## ⬜ V5 — AI Mission Optimization
+✅ V1
+✅ V2
+✅ V3
+⬜ V4
+⬜ V5
 
-# Planner Engine
+Memory Engine
 
-- ✅ V1 — Daily Planner
-- ✅ V2 — Lifestyle Integration
-- ⬜ V3 — Memory Integration
-- ⬜ V4 — Intelligent Scheduling
-- ⬜ V5 — AI Planner
+✅ V1
+✅ V2
+⬜ V3
+⬜ V4
+⬜ V5
 
----
+# Phase 2 — Core Platform
 
-# Lifestyle Engine
-
-- ✅ V1 — Lifestyle Model
-- ✅ V2 — Available Slot Detection
-- ⬜ V3 — Weekly Schedule
-- ⬜ V4 — Dynamic Routine
-- ⬜ V5 — Habit Learning
-
----
-
-# Memory Engine
-
-- Memory Engine
-
-  ✅ V1 — Memory Model
-
-- ⬜ V2 — Memory Search
-- ⬜ V3 — User Learning
-- ⬜ V4 — Long-Term Memory
-- ⬜ V5 — AI Personalization
+| Component        | Purpose                  | Status  |
+| ---------------- | ------------------------ | ------- |
+| 🧠 GoalOS Kernel | Orchestrates all engines | Planned |
 
 ---
 
-# Tutor Engine
+# Phase 3 — Integrations
 
-- ⬜ V1 — Lesson Management
-- ⬜ V2 — Memory Integration
-- ⬜ V3 — Adaptive Learning
-- ⬜ V4 — Personalized Teaching
-- ⬜ V5 — AI Tutor
-
----
-
-# Analytics Engine
-
-- ⬜ V1 — Daily Analytics
-- ⬜ V2 — Weekly Reports
-- ⬜ V3 — Goal Insights
-- ⬜ V4 — Prediction Engine
-- ⬜ V5 — AI Analytics
+| Integration | Purpose                           | Status  |
+| ----------- | --------------------------------- | ------- |
+| 💬 WhatsApp | Daily interaction & notifications | Planned |
+| 🤖 AI       | Natural reasoning & conversation  | Planned |
+| 🎙 Voice    | Voice-first operating system      | Planned |
 
 ---
 
-# Notification Engine
+# Phase 4 — Experiences
 
-- ⬜ V1 — Scheduled Notifications
-- ⬜ V2 — Planner Integration
-- ⬜ V3 — Smart Notifications
-- ⬜ V4 — Context Awareness
-- ⬜ V5 — AI Reminder System
+| Experience       | Purpose               | Status  |
+| ---------------- | --------------------- | ------- |
+| 📚 Tutor         | Personalized learning | Planned |
+| 🔔 Notifications | Smart reminders       | Planned |
+| 📈 Analytics     | Insights & reports    | Planned |
+
+---
+
+# Engine Evolution Model
+
+Every engine evolves through five stages.
+
+| Version | Stage        |
+| ------- | ------------ |
+| V1      | Structure    |
+| V2      | Capability   |
+| V3      | Intelligence |
+| V4      | Learning     |
+| V5      | Prediction   |
 
 ---
 
@@ -111,6 +99,7 @@ Mission Engine
 
 1. Every engine has one responsibility.
 2. Every engine version ends with a visible feature.
-3. Engines communicate through public functions only.
-4. Never duplicate business logic across engines.
-5. Update this roadmap whenever an engine version is completed.
+3. Pages render, engines think.
+4. Engines communicate only through public capabilities.
+5. Kernel coordinates, engines specialize.
+6. Update this roadmap after every completed milestone.
