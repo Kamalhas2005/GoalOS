@@ -1,3 +1,4 @@
+import { getStudyMemories } from "@/lib/memory";
 import { Mission } from "@/types/mission";
 
 export const activeMission: Mission = {
@@ -49,4 +50,22 @@ export function getMissionStatus(
     return "Ahead of Schedule";
 
   return "On Track";
+}
+
+export function getMissionHealth():
+  | "Excellent"
+  | "Good"
+  | "Needs Attention" {
+
+  const studyCount = getStudyMemories().length;
+
+  if (studyCount >= 5) {
+    return "Excellent";
+  }
+
+  if (studyCount >= 3) {
+    return "Good";
+  }
+
+  return "Needs Attention";
 }

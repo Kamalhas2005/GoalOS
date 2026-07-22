@@ -65,3 +65,23 @@ export function searchMemories(keyword: string) {
       memory.description.toLowerCase().includes(query)
   );
 }
+
+export function getStudyMemories() {
+  return getMemoriesByCategory("study");
+}
+
+export function getMemoriesByDate(date: string) {
+  return memories.filter(
+    (memory) => memory.createdAt === date
+  );
+}
+
+export function getRecentMemories(limit: number = 5) {
+  return [...memories]
+    .sort(
+      (a, b) =>
+        new Date(b.createdAt).getTime() -
+        new Date(a.createdAt).getTime()
+    )
+    .slice(0, limit);
+}

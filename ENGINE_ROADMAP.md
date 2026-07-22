@@ -12,12 +12,12 @@ Every engine has one clear responsibility.
 
 These are the four pillars of GoalOS.
 
-| Engine       | Responsibility               | Status      |
-| ------------ | ---------------------------- | ----------- |
-| 🎯 Mission   | What is important?           | V2 ✅       |
-| 📅 Planner   | What should happen next?     | V2 ✅       |
-| 🌱 Lifestyle | When is the user available?  | V2 ✅       |
-| 🧠 Memory    | What should GoalOS remember? | Not Started |
+| Engine       | Responsibility               | Status |
+| ------------ | ---------------------------- | ------ |
+| 🎯 Mission   | What is important?           | V2 ✅  |
+| 📅 Planner   | What should happen next?     | V2 ✅  |
+| 🌱 Lifestyle | When is the user available?  | V2 ✅  |
+| 🧠 Memory    | What should GoalOS remember? | V1 ✅  |
 
 ---
 
@@ -32,15 +32,17 @@ These are the four pillars of GoalOS.
 
 ---
 
-# Mission Engine
+Mission Engine
 
-- ✅ V1 — Mission Model
-- ✅ V2 — Mission Intelligence
-- ⬜ V3 — Memory Integration
-- ⬜ V4 — Dynamic Priorities
-- ⬜ V5 — AI Mission Optimization
+✅ V1 — Mission Model
 
----
+✅ V2 — Mission Intelligence
+
+✅ V3 — Memory Integration
+
+⬜ V4 — Dynamic Priorities
+
+## ⬜ V5 — AI Mission Optimization
 
 # Planner Engine
 
@@ -64,7 +66,10 @@ These are the four pillars of GoalOS.
 
 # Memory Engine
 
-- ⬜ V1 — Memory Model
+- Memory Engine
+
+  ✅ V1 — Memory Model
+
 - ⬜ V2 — Memory Search
 - ⬜ V3 — User Learning
 - ⬜ V4 — Long-Term Memory

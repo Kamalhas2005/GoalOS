@@ -7,6 +7,7 @@ import {
   getDaysRemaining,
   getMissionPhase,
   getMissionStatus,
+  getMissionHealth,
 } from "@/lib/mission";
 
 import {
@@ -25,6 +26,7 @@ export default function Home() {
     activeMission.progress,
     activeMission.deadline
   );
+  const missionHealth = getMissionHealth();
 
   const completedTasks = getCompletedTasks(todayPlan);
 
@@ -64,7 +66,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
+          <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             <div className="rounded-xl bg-slate-900 p-4">
               <p className="text-xs uppercase text-slate-500">
                 Days Remaining
@@ -89,6 +91,25 @@ export default function Home() {
               <p className="text-xs uppercase text-slate-500">
                 Status
               </p>
+            <div className="rounded-xl bg-slate-900 p-4">
+
+  <p className="text-xs uppercase text-slate-500">
+    Mission Health
+  </p>
+
+  <p
+    className={`mt-2 text-2xl font-bold ${
+      missionHealth === "Excellent"
+        ? "text-emerald-400"
+        : missionHealth === "Good"
+        ? "text-yellow-300"
+        : "text-red-400"
+    }`}
+  >
+    {missionHealth}
+  </p>
+
+</div>
 
               <p className="mt-2 text-2xl font-bold text-emerald-400">
                 {missionStatus}

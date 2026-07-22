@@ -2,14 +2,15 @@ import PageHeader from "@/components/PageHeader";
 import Card from "@/components/Card";
 
 import {
-  memories,
   getTotalMemories,
   getLatestMemory,
+  getRecentMemories,
 } from "@/lib/memory";
 
 export default function MemoryPage() {
   const totalMemories = getTotalMemories();
   const latestMemory = getLatestMemory();
+  const recentMemories = getRecentMemories();
 
   return (
     <main className="p-10">
@@ -52,7 +53,7 @@ export default function MemoryPage() {
 
           <div className="space-y-3">
 
-            {memories.map((memory) => (
+            {recentMemories.map((memory) => (
 
               <div
                 key={memory.id}
