@@ -9,7 +9,7 @@ import {
   getMissionStatus,
   getMissionHealth,
 } from "@/lib/mission";
-
+import { getDailyBrief } from "@/lib/kernel";
 import {
   todayPlan,
   getCompletedTasks,
@@ -27,6 +27,7 @@ export default function Home() {
     activeMission.deadline
   );
   const missionHealth = getMissionHealth();
+  const dailyBrief = getDailyBrief();
 
   const completedTasks = getCompletedTasks(todayPlan);
 
@@ -147,7 +148,40 @@ export default function Home() {
               ))}
             </ul>
           </Card>
+        <Card title="🧠 GoalOS Daily Brief">
 
+  <div className="space-y-3">
+
+    <div className="flex justify-between">
+      <span>Mission</span>
+      <span>{dailyBrief.missionHealth}</span>
+    </div>
+
+    <div className="flex justify-between">
+      <span>Lifestyle</span>
+      <span>{dailyBrief.lifestyleHealth}</span>
+    </div>
+
+    <div className="flex justify-between">
+      <span>Planner</span>
+      <span>{dailyBrief.planningQuality}</span>
+    </div>
+
+    <div className="pt-3 border-t border-slate-700">
+
+      <p className="text-xs text-slate-500">
+        Latest Memory
+      </p>
+
+      <p className="mt-1 text-cyan-300">
+        {dailyBrief.latestMemory ?? "No memories yet"}
+      </p>
+
+    </div>
+
+  </div>
+
+</Card>
           <Card title="Today's Progress">
             <div className="space-y-4">
               <div className="flex justify-between">
